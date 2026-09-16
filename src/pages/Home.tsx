@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { MessageCircle, ArrowRight, ShieldCheck, HeartHandshake, Eye, Sparkles, Send } from 'lucide-react';
 import { siteConfig, services, products, testimonials, faqs } from '../data/config';
 import { useState } from 'react';
+import { SuccessModal } from '../components/SuccessModal';
 
 export function Home() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' });
@@ -501,11 +502,6 @@ export function Home() {
                   )}
                 </button>
 
-                {formStatus === 'success' && (
-                  <div className="bg-green-900/30 border border-green-500/30 text-green-400 p-4 rounded-lg text-sm mt-4">
-                    Votre demande a bien été envoyée. Merci pour votre confiance. Nous reviendrons vers vous prochainement.
-                  </div>
-                )}
                 {formStatus === 'error' && (
                   <div className="bg-red-900/30 border border-red-500/30 text-red-400 p-4 rounded-lg text-sm mt-4">
                     Nous n'avons pas pu envoyer votre demande. Veuillez réessayer ou nous contacter directement sur WhatsApp.
@@ -515,6 +511,11 @@ export function Home() {
             </div>
           </div>
         </div>
+
+        <SuccessModal
+          isOpen={formStatus === 'success'}
+          onClose={() => setFormStatus('idle')}
+        />
       </section>
 
       {/* 10. CTA FINAL */}

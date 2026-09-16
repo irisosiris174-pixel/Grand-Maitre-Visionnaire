@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Mail, Phone, MapPin, Send } from 'lucide-react';
 import { siteConfig } from '../data/config';
+import { SuccessModal } from '../components/SuccessModal';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -172,12 +173,6 @@ export function Contact() {
               />
             </div>
 
-            {status === 'success' && (
-              <div className="p-4 bg-green-500/10 border border-green-500/20 text-green-400 rounded-lg text-sm">
-                Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
-              </div>
-            )}
-            
             {status === 'error' && (
               <div className="p-4 bg-red-500/10 border border-red-500/20 text-red-400 rounded-lg text-sm">
                 Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer ou nous contacter via WhatsApp.
@@ -201,6 +196,11 @@ export function Contact() {
           </form>
         </div>
       </motion.div>
+
+      <SuccessModal
+        isOpen={status === 'success'}
+        onClose={() => setStatus('idle')}
+      />
     </div>
   );
 }
