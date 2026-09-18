@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, MessageCircle } from 'lucide-react';
+import { Menu, X, MessageCircle, Phone } from 'lucide-react';
 import { siteConfig } from '../data/config';
 import { cn } from '../lib/utils';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -74,13 +74,26 @@ export function Header() {
           </a>
         </nav>
 
-        {/* Mobile menu button */}
-        <button
-          className="lg:hidden text-white p-2 hover:text-primary-500 transition-colors"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Header Right Actions for Mobile */}
+        <div className="flex items-center gap-3 lg:hidden">
+          <a
+            href={`tel:${siteConfig.phoneRaw}`}
+            aria-label={`Appeler le ${siteConfig.phone}`}
+            title={`Appeler le ${siteConfig.phone}`}
+            className="p-2.5 rounded-full border border-primary-500/50 bg-background-card/90 text-white hover:border-primary-500 hover:bg-primary-900/40 transition-all duration-300 shadow-[0_0_12px_rgba(193,18,31,0.3)] flex items-center justify-center active:scale-95"
+          >
+            <Phone size={20} className="text-primary-500" />
+          </a>
+
+          {/* Mobile menu button */}
+          <button
+            className="text-white p-2 hover:text-primary-500 transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Nav */}
@@ -90,7 +103,7 @@ export function Header() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-background-alt border-b border-white/10 shadow-2xl lg:hidden flex flex-col px-4 py-6 gap-6"
+            className="absolute top-full left-0 w-full bg-background-alt border-b border-white/10 shadow-2xl lg:hidden flex flex-col px-4 py-6 gap-5"
           >
             {navLinks.map((link) => (
               <Link
@@ -104,15 +117,24 @@ export function Header() {
                 {link.name}
               </Link>
             ))}
-            <a
-              href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-2 bg-primary-700 text-white px-6 py-4 rounded font-semibold mt-4 tracking-wide"
-            >
-              <MessageCircle size={20} />
-              Consulter sur WhatsApp
-            </a>
+            <div className="flex flex-col gap-3 mt-2">
+              <a
+                href={`tel:${siteConfig.phoneRaw}`}
+                className="flex items-center justify-center gap-2 border border-primary-500/50 bg-primary-900/20 text-white px-6 py-3.5 rounded font-semibold tracking-wide hover:bg-primary-900/40 transition-colors"
+              >
+                <Phone size={20} className="text-primary-500" />
+                <span>Appeler : {siteConfig.phone}</span>
+              </a>
+              <a
+                href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-center gap-2 bg-primary-700 text-white px-6 py-3.5 rounded font-semibold tracking-wide shadow-[0_0_15px_rgba(193,18,31,0.4)]"
+              >
+                <MessageCircle size={20} />
+                <span>Consulter sur WhatsApp</span>
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

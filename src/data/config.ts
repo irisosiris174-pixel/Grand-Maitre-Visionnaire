@@ -1,11 +1,12 @@
 export const siteConfig = {
   name: "Grand Maître Visionnaire",
   slogan: "La vision éclaire le chemin. La sagesse transforme la destinée.",
-  whatsappNumber: "+2290195491990", 
+  whatsappNumber: "+2290195491990",
   whatsappDisplay: "+229 01 95 49 19 90",
-  phone: "01 97 14 73 68",
+  phone: "+229 01 97 14 73 68",
+  phoneRaw: "+2290197147368",
   email: "visionnaire900@gmail.com",
-  address: "Bohicon, Bénin",
+  address: "Abomey, Bénin",
   whatsappMessage: "Bonjour Grand Maître Visionnaire, je souhaite obtenir des informations concernant une consultation.",
 };
 
@@ -47,28 +48,28 @@ export const testimonials = [
     id: '1',
     text: "Je suis venue avec beaucoup de questions et surtout avec le sentiment d'être bloquée dans plusieurs domaines de ma vie. J'ai apprécié le temps consacré à mon écoute. Je suis repartie avec une autre manière de regarder ma situation et des conseils qui m'ont permis de prendre du recul.",
     author: "Marie",
-    location: "Cotonou",
+    location: "France",
     service: "Consultation spirituelle",
   },
   {
     id: '2',
     text: "Ce qui m'a marqué dès le premier échange, c'est l'écoute. Je ne me suis pas sentie jugée. Les échanges étaient simples et directs, et cela m'a permis de parler librement de ce que je traversais.",
     author: "S. K.",
-    location: "Porto-Novo",
+    location: "Gabon",
     service: "Conseils spirituels",
   },
   {
     id: '3',
     text: "Je traversais une période où beaucoup de choses me préoccupaient. La consultation m'a permis de poser mes questions et de prendre le temps de réfléchir à certaines décisions. J'ai particulièrement apprécié l'approche humaine et la discrétion.",
     author: "Aïcha",
-    location: "Abomey-Calavi",
+    location: "Canada",
     service: "Consultation spirituelle",
   },
   {
     id: '4',
     text: "Je cherchais avant tout à comprendre certaines difficultés que je rencontrais depuis quelque temps. Les échanges m'ont permis de prendre du recul et de retrouver davantage de sérénité. Merci pour l'accueil et la disponibilité.",
     author: "Jean",
-    location: "Bohicon",
+    location: "Bénin",
     service: "Accompagnement spirituel",
   },
 ];

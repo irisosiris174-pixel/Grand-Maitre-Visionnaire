@@ -54,7 +54,7 @@ export function About() {
       {/* 2. NOTRE HISTOIRE */}
       <section className="py-24 bg-background-alt relative">
         <div className="container mx-auto px-4 max-w-5xl">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -65,7 +65,7 @@ export function About() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -77,17 +77,17 @@ export function About() {
               <p>Avant de chercher une réponse, il est essentiel de comprendre la question. Avant d'orienter, il faut écouter. Et avant toute démarche, il faut considérer la personne dans son histoire, son environnement et ses préoccupations.</p>
               <p>C'est cette vision qui guide notre manière d'accueillir chaque personne.</p>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl group h-full min-h-[350px]"
             >
-              <img 
-                src="/images/galery1.jpg" 
-                alt="Une démarche de transmission" 
-                className="w-full h-full object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-700 min-h-[350px]" 
+              <img
+                src="/images/galery1.jpg"
+                alt="Une démarche de transmission"
+                className="w-full h-full object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-700 min-h-[350px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
             </motion.div>
@@ -114,7 +114,7 @@ export function About() {
               { num: '02', title: 'COMPRENDRE', subtitle: 'Prendre du recul avant d\'agir.', desc: 'Comprendre une situation demande parfois de l\'observer sous plusieurs angles. L\'échange permet de mettre des mots sur les questions qui vous préoccupent.' },
               { num: '03', title: 'ORIENTER', subtitle: 'Vous accompagner dans votre réflexion.', desc: 'L\'objectif est de vous offrir un espace d\'échange et une orientation adaptée à la démarche que vous souhaitez entreprendre.' }
             ].map((principle, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -141,39 +141,39 @@ export function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="grid grid-cols-2 gap-3 h-full min-h-[360px]"
             >
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group row-span-2">
-                <img 
-                  src="/images/galery1.jpg" 
-                  alt="Tradition et transmission 1" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[360px]" 
+                <img
+                  src="/images/galery1.jpg"
+                  alt="Tradition et transmission 1"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[360px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group h-44">
-                <img 
-                  src="/images/galery2.jpg" 
-                  alt="Tradition et transmission 2" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                <img
+                  src="/images/galery2.jpg"
+                  alt="Tradition et transmission 2"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group h-44">
-                <img 
-                  src="/images/galery3.jpg" 
-                  alt="Tradition et transmission 3" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+                <img
+                  src="/images/galery3.jpg"
+                  alt="Tradition et transmission 3"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -207,7 +207,7 @@ export function About() {
               { title: "DISCRÉTION", desc: "Traiter les échanges personnels avec confidentialité et retenue." },
               { title: "PROXIMITÉ", desc: "Maintenir un contact simple et humain." }
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -291,10 +291,10 @@ export function About() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
-              <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">BOHICON • BÉNIN</span>
+              <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">ABOMEY • BÉNIN</span>
               <h2 className="text-3xl font-bold mb-6">Une présence ancrée dans son environnement</h2>
               <div className="space-y-4 text-gray-300 mb-8">
-                <p>Installé à <strong>Bohicon, au Bénin</strong>, le Grand Maître Visionnaire accueille les personnes qui souhaitent prendre contact pour une consultation, un accompagnement ou obtenir des informations sur les services et produits proposés.</p>
+                <p>Installé à <strong>Abomey, au Bénin</strong>, le Grand Maître Visionnaire accueille les personnes qui souhaitent prendre contact pour une consultation, un accompagnement ou obtenir des informations sur les services et produits proposés.</p>
                 <p>La relation commence simplement : un message, une question, un premier échange.</p>
                 <p>Selon les possibilités proposées, certaines démarches peuvent également être organisées à distance. Pour connaître les modalités actuelles, contactez directement le Grand Maître Visionnaire.</p>
               </div>

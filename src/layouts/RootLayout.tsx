@@ -2,6 +2,7 @@ import { Outlet, ScrollRestoration } from 'react-router-dom';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { WhatsAppFloatingButton } from '../components/WhatsAppFloatingButton';
+import { PhoneFloatingButton } from '../components/PhoneFloatingButton';
 
 export function RootLayout() {
   return (
@@ -11,6 +12,7 @@ export function RootLayout() {
         <Outlet />
       </main>
       <Footer />
+      <PhoneFloatingButton />
       <WhatsAppFloatingButton />
       <ScrollRestoration />
     </div>

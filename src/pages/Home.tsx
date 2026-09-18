@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { MessageCircle, ArrowRight, ShieldCheck, HeartHandshake, Eye, Sparkles, Send } from 'lucide-react';
+import { MessageCircle, ArrowRight, ShieldCheck, HeartHandshake, Eye, Sparkles, Send, MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
 import { siteConfig, services, products, testimonials, faqs } from '../data/config';
 import { useState } from 'react';
 import { SuccessModal } from '../components/SuccessModal';
@@ -53,7 +53,7 @@ export function Home() {
                 LA <span className="text-primary-500">VISION</span> ÉCLAIRE <br className="hidden sm:inline" /> LE CHEMIN.
               </h1>
               <p className="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
-                Le Grand Maître Visionnaire vous reçoit, vous écoute et vous accompagne 
+                Le Grand Maître Visionnaire vous reçoit, vous écoute et vous accompagne
                 dans vos préoccupations personnelles, spirituelles et existentielles.
               </p>
 
@@ -65,13 +65,13 @@ export function Home() {
                   className="flex items-center gap-2 bg-primary-700 hover:bg-primary-500 text-white px-7 py-4 rounded-xl font-semibold transition-all duration-300 hover:shadow-[0_0_20px_rgba(193,18,31,0.5)] justify-center"
                 >
                   <MessageCircle size={20} />
-                  Parler sur WhatsApp
+                  Consulter sur WhatsApp
                 </a>
                 <Link
                   to="/services"
                   className="flex items-center gap-2 border border-white/20 hover:border-primary-500 hover:bg-primary-900/20 text-white px-7 py-4 rounded-xl font-semibold transition-all duration-300 justify-center group"
                 >
-                  Découvrir nos services
+                  Découvrir les rituels
                   <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
@@ -98,14 +98,14 @@ export function Home() {
       {/* 2. À PROPOS — UNE PRÉSENCE AU SERVICE DE L’ÉCOUTE */}
       <section className="py-24 bg-background-alt relative">
         <div className="container mx-auto px-4 max-w-6xl">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">NOTRE UNIVERS</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">À propos du Grand Maître Visionnaire</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">À propos du Grand Maître Visionnaire</h2>
             <div className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto space-y-4">
               <p>Le Grand Maître Visionnaire propose un espace dédié à celles et ceux qui souhaitent prendre du recul, mieux comprendre une situation ou être accompagnés dans une démarche spirituelle.</p>
               <p>Notre approche repose avant tout sur <strong>l'écoute, la discrétion, le respect de la personne et la considération de chaque histoire dans sa singularité</strong>.</p>
@@ -114,7 +114,7 @@ export function Home() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -124,17 +124,33 @@ export function Home() {
               <p className="text-gray-300">Chaque personne arrive avec son propre parcours, ses interrogations et ses attentes. C'est pourquoi nous privilégions une démarche personnalisée plutôt qu'une réponse standardisée.</p>
               <p className="text-gray-300">Qu'il s'agisse d'une question sentimentale, familiale, professionnelle ou spirituelle, la consultation commence par l'écoute et l'échange.</p>
               <p className="font-semibold text-white text-xl">Ici, votre parole a sa place.</p>
+
+              {/* Counter statistics matching reference screenshot */}
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-white/10 mt-6">
+                <div>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-primary-500 font-serif block">12</span>
+                  <span className="text-xs sm:text-sm text-gray-400 font-medium">Rituels & Accompagnements</span>
+                </div>
+                <div>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-primary-500 font-serif block">50+</span>
+                  <span className="text-xs sm:text-sm text-gray-400 font-medium">Pays représentés</span>
+                </div>
+                <div>
+                  <span className="text-3xl sm:text-4xl font-extrabold text-primary-500 font-serif block">1000+</span>
+                  <span className="text-xs sm:text-sm text-gray-400 font-medium">Consultants guidés</span>
+                </div>
+              </div>
             </motion.div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               className="relative rounded-2xl overflow-hidden border border-white/10 shadow-xl group h-full min-h-[350px]"
             >
-              <img 
-                src="/images/A propos.jpg" 
-                alt="À propos du Grand Maître Visionnaire" 
-                className="w-full h-full object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-700 min-h-[350px]" 
+              <img
+                src="/images/A propos.jpg"
+                alt="À propos du Grand Maître Visionnaire"
+                className="w-full h-full object-cover object-center rounded-2xl group-hover:scale-105 transition-transform duration-700 min-h-[350px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none"></div>
             </motion.div>
@@ -147,7 +163,7 @@ export function Home() {
               { icon: Sparkles, title: "TRADITION", desc: "Une approche inspirée de la spiritualité et des savoirs traditionnels." },
               { icon: HeartHandshake, title: "PERSONNALISATION", desc: "Chaque accompagnement est adapté au contexte présenté lors de la consultation." },
             ].map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -172,18 +188,74 @@ export function Home() {
         </div>
       </section>
 
+      {/* TRADITION ET TRANSMISSION */}
+      <section className="py-24 bg-primary-900/5 relative border-y border-primary-500/10">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-16">
+            <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">TRADITION & TRANSMISSION</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Une spiritualité profondément liée à la transmission</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="grid grid-cols-2 gap-3 h-full min-h-[360px]"
+            >
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group row-span-2">
+                <img
+                  src="/images/galery1.jpg"
+                  alt="Tradition et transmission 1"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 min-h-[360px]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group h-44">
+                <img
+                  src="/images/galery2.jpg"
+                  alt="Tradition et transmission 2"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-lg group h-44">
+                <img
+                  src="/images/galery3.jpg"
+                  alt="Tradition et transmission 3"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6 text-gray-300 text-lg leading-relaxed"
+            >
+              <p>Les traditions spirituelles africaines reposent sur une relation particulière entre l'être humain, son histoire, sa communauté, son environnement et les générations qui l'ont précédé.</p>
+              <p>Elles accordent une place importante à la transmission des connaissances, à la parole, aux symboles, aux pratiques traditionnelles et à la recherche d'équilibre.</p>
+              <p>Le Grand Maître Visionnaire s'inscrit dans cet univers de transmission et propose un accompagnement destiné aux personnes qui souhaitent découvrir ou approfondir cette dimension traditionnelle de la spiritualité.</p>
+              <p className="font-medium text-white pt-2">Notre démarche cherche à préserver une relation simple avec ces traditions : respectueuse, humaine et accessible.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* 3. NOS SERVICES — UN ACCOMPAGNEMENT ADAPTÉ À VOS PRÉOCCUPATIONS */}
       <section className="py-24 bg-background relative overflow-hidden">
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
-            <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">NOS SERVICES</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Des accompagnements spirituels pour différentes situations de vie</h2>
+            <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">Nos Spécialités</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Rituels & Actions Spirituelles</h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-              Les préoccupations qui nous amènent à rechercher un accompagnement peuvent être nombreuses. 
+              Les préoccupations qui nous amènent à rechercher un accompagnement peuvent être nombreuses.
               Le Grand Maître Visionnaire propose différents services spirituels et traditionnels destinés aux personnes qui souhaitent échanger, être orientées ou entreprendre une démarche personnelle.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.slice(0, 6).map((service, i) => (
               <motion.div
@@ -210,19 +282,15 @@ export function Home() {
               </motion.div>
             ))}
           </div>
-          
-          <div className="mt-16 bg-primary-900/5 border border-primary-500/20 rounded-2xl p-8 text-center max-w-4xl mx-auto flex flex-col items-center">
-            <h4 className="text-2xl font-bold mb-4">Besoin d'en parler ?</h4>
-            <p className="text-gray-300 mb-6">Chaque situation est différente. Les services proposés relèvent d'une démarche spirituelle et traditionnelle.</p>
-            <a
-              href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#20bd5a] transition-all hover:scale-105"
+
+          <div className="mt-14 text-center">
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-3 bg-primary-700 hover:bg-primary-500 text-white px-8 py-4 rounded-xl font-bold tracking-wider uppercase text-sm sm:text-base transition-all duration-300 shadow-[0_0_20px_rgba(193,18,31,0.4)] hover:shadow-[0_0_30px_rgba(193,18,31,0.6)] group hover:scale-105"
             >
-              <MessageCircle size={20} />
-              Parler de votre situation sur WhatsApp
-            </a>
+              Découvrir nos 12 rituels
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
@@ -232,9 +300,9 @@ export function Home() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">ESPACE TRADITIONNEL</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Nos produits traditionnels</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Nos produits traditionnels</h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-              Découvrez une sélection de produits proposés dans l'univers traditionnel et spirituel du Grand Maître Visionnaire. 
+              Découvrez une sélection de produits proposés dans l'univers traditionnel et spirituel du Grand Maître Visionnaire.
               Pour connaître les modalités d'utilisation, la disponibilité et les conditions de commande, contactez-nous sur WhatsApp.
             </p>
           </div>
@@ -263,7 +331,7 @@ export function Home() {
                     <p className="text-primary-400 font-semibold mb-3">{product.price}</p>
                     <p className="text-gray-400 text-sm mb-4 line-clamp-2">{product.description}</p>
                   </div>
-                  <a 
+                  <a
                     href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(`Bonjour, je souhaite obtenir des informations sur le produit : ${product.name}`)}`}
                     target="_blank"
                     rel="noreferrer"
@@ -281,7 +349,7 @@ export function Home() {
               Voir tous les produits
             </Link>
           </div>
-          
+
           <p className="text-center text-gray-500 text-xs max-w-4xl mx-auto">
             Les produits présentés appartiennent à une tradition spirituelle et culturelle. Les descriptions ne constituent pas des promesses de résultats ni des indications médicales. Pour toute question de santé, consultez un professionnel de santé qualifié.
           </p>
@@ -293,7 +361,7 @@ export function Home() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">NOTRE ENGAGEMENT</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Une approche fondée sur l'écoute et le respect</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Une approche fondée sur l'écoute et le respect</h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-lg">
               Au-delà des pratiques et des traditions, nous accordons une importance particulière à la manière dont chaque personne est accueillie. Notre priorité est de créer un cadre dans lequel vous pouvez parler librement de vos préoccupations.
             </p>
@@ -343,26 +411,39 @@ export function Home() {
         <div className="container mx-auto px-4 max-w-6xl">
           <div className="text-center mb-16">
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">EXPÉRIENCES</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Ils partagent leur expérience</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Ils partagent leur expérience</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">Chaque personne vit son accompagnement d'une manière différente.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {testimonials.slice(0, 2).map((testi, i) => (
+          {/* 3 testimonial cards grid matching screenshot */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            {testimonials.slice(0, 3).map((testi, i) => (
               <motion.div
                 key={testi.id}
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-background p-8 rounded-2xl border border-white/5 relative"
+                className="bg-background-card p-7 rounded-2xl border border-white/10 hover:border-primary-500/30 transition-all flex flex-col justify-between relative shadow-xl group"
               >
-                <div className="text-primary-500 mb-4">
-                  <svg className="w-10 h-10 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
-                </div>
-                <p className="text-gray-300 italic mb-6 text-lg">« {testi.text} »</p>
                 <div>
-                  <p className="font-bold text-white">— {testi.author}, {testi.location}</p>
+                  <div className="flex items-center gap-1 text-primary-500 mb-4">
+                    {[...Array(5)].map((_, sIdx) => (
+                      <span key={sIdx} className="text-lg">★</span>
+                    ))}
+                  </div>
+                  <p className="text-gray-300 italic mb-6 text-sm sm:text-base leading-relaxed">
+                    « {testi.text} »
+                  </p>
+                </div>
+                <div className="border-t border-white/10 pt-4 flex items-center justify-between">
+                  <div>
+                    <p className="font-bold text-white text-base">— {testi.author}</p>
+                    <p className="text-xs text-primary-400 font-medium">{testi.location}</p>
+                  </div>
+                  <span className="text-xs text-gray-500 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                    {testi.service}
+                  </span>
                 </div>
               </motion.div>
             ))}
@@ -370,7 +451,7 @@ export function Home() {
 
           <div className="text-center">
             <Link to="/temoignages" className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors">
-              Voir d'autres expériences <ArrowRight size={16} />
+              Voir tous les témoignages de consultants <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -381,7 +462,7 @@ export function Home() {
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
             <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">QUESTIONS FRÉQUENTES</span>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">Vous souhaitez en savoir plus ?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 font-serif">Vous souhaitez en savoir plus ?</h2>
             <p className="text-gray-400 text-lg">Avant de prendre contact, vous trouverez ici quelques réponses aux questions les plus fréquentes.</p>
           </div>
 
@@ -400,7 +481,7 @@ export function Home() {
               </details>
             ))}
           </div>
-          
+
           <div className="text-center mt-8">
             <Link to="/faq" className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 transition-colors">
               Consulter toutes les questions <ArrowRight size={16} />
@@ -409,102 +490,204 @@ export function Home() {
         </div>
       </section>
 
-      {/* 8. PRISE DE CONTACT & 9. FORMULAIRE */}
-      <section className="py-24 bg-background-alt relative overflow-hidden border-t border-white/5" id="contact">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
-              <span className="text-primary-500 font-semibold tracking-wider text-sm uppercase mb-3 block">PRENDRE CONTACT</span>
-              <h2 className="text-3xl md:text-5xl font-bold mb-6">Parlons de votre situation</h2>
-              <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-                Vous avez une question, souhaitez demander une consultation ou souhaitez simplement obtenir davantage d'informations ? Vous pouvez commencer par un échange simple et direct. <strong>Il n'est pas nécessaire de tout raconter dans votre premier message. Quelques mots suffisent pour commencer.</strong>
-              </p>
-              
-              <div className="bg-primary-900/10 border border-primary-500/30 p-8 rounded-2xl mb-8">
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-[#25D366]">
-                  <MessageCircle /> WhatsApp - Contact Prioritaire
+      {/* 8. PRISE DE CONTACT & FORMULAIRE DE CONFIDENTIALITÉ */}
+      <section className="py-20 lg:py-28 bg-background-alt relative overflow-hidden border-t border-white/5" id="contact">
+        {/* Subtle background glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-900/10 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl relative z-10">
+          {/* Header centered matching the screenshot title structure */}
+          <div className="text-center mb-12 sm:mb-16">
+            <span className="text-primary-500 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3 block">
+              PRENDRE CONTACT
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold uppercase tracking-tight text-white mb-4">
+              ÉCRIRE AU <span className="text-primary-500">GRAND MAÎTRE VISIONNAIRE</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-transparent via-primary-500 to-transparent mx-auto rounded-full opacity-80 mb-4" />
+            <p className="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+              Vous avez une préoccupation ou une question ? Le Grand Maître vous accueille avec écoute et discrétion.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            {/* Left Column: Coordonnées Card + Map Card (col-span-5) */}
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              {/* Card 1: Coordonnées */}
+              <div className="bg-background-card border border-white/10 hover:border-primary-500/30 rounded-2xl p-6 sm:p-7 shadow-2xl transition-colors">
+                <h3 className="text-primary-500 font-bold uppercase tracking-wider text-sm sm:text-base mb-6 border-b border-white/10 pb-3 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-primary-500 animate-pulse"></span>
+                  COORDONNÉES
                 </h3>
-                <p className="text-gray-300 mb-6">Le moyen le plus simple pour nous joindre. Écrivez directement au Grand Maître Visionnaire.</p>
-                <a
-                  href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="inline-flex items-center justify-center w-full gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#20bd5a] transition-all hover:scale-[1.02]"
-                >
-                  <MessageCircle size={20} />
-                  Démarrer une conversation WhatsApp
-                </a>
+
+                <ul className="space-y-5 text-gray-200 text-sm sm:text-base">
+                  <li className="flex items-start gap-4 group">
+                    <div className="p-2.5 rounded-xl bg-primary-900/20 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors shrink-0">
+                      <MapPin size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-gray-400 block font-semibold">Localisation</span>
+                      <span className="font-semibold text-white">Abomey, Bénin</span>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4 group">
+                    <div className="p-2.5 rounded-xl bg-primary-900/20 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors shrink-0">
+                      <Phone size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-gray-400 block font-semibold">Téléphone direct</span>
+                      <a href={`tel:${siteConfig.phone.replace(/\s+/g, '')}`} className="font-semibold text-white hover:text-primary-400 transition-colors">
+                        {siteConfig.phone}
+                      </a>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4 group">
+                    <div className="p-2.5 rounded-xl bg-[#25D366]/10 text-[#25D366] group-hover:bg-[#25D366] group-hover:text-white transition-colors shrink-0">
+                      <MessageCircle size={20} />
+                    </div>
+                    <div className="flex-grow">
+                      <span className="text-xs uppercase tracking-wider text-gray-400 block font-semibold">WhatsApp Direct</span>
+                      <a
+                        href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-2 text-[#25D366] font-bold hover:underline mt-0.5"
+                      >
+                        {siteConfig.whatsappDisplay}
+                        <ExternalLink size={14} />
+                      </a>
+                    </div>
+                  </li>
+
+                  <li className="flex items-start gap-4 group">
+                    <div className="p-2.5 rounded-xl bg-primary-900/20 text-primary-500 group-hover:bg-primary-500 group-hover:text-white transition-colors shrink-0">
+                      <Mail size={20} />
+                    </div>
+                    <div>
+                      <span className="text-xs uppercase tracking-wider text-gray-400 block font-semibold">Email</span>
+                      <a href={`mailto:${siteConfig.email}`} className="font-medium text-gray-300 hover:text-white transition-colors break-all">
+                        {siteConfig.email}
+                      </a>
+                    </div>
+                  </li>
+                </ul>
               </div>
 
-              <div className="space-y-6">
-                <h3 className="font-bold text-xl mb-4 border-b border-white/10 pb-2">Autres moyens de contact</h3>
-                <div className="flex flex-col gap-4">
-                  <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Appel direct</p>
-                    <p className="text-xl font-medium">{siteConfig.phone}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Email</p>
-                    <a href={`mailto:${siteConfig.email}`} className="text-xl font-medium text-primary-400 hover:text-primary-300 transition-colors">{siteConfig.email}</a>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Localisation</p>
-                    <p className="text-xl font-medium">{siteConfig.address}</p>
-                  </div>
+              {/* Card 2: Google Maps Frame for Abomey */}
+              <div className="bg-background-card border border-white/10 rounded-2xl overflow-hidden shadow-2xl relative group">
+                <div className="p-3 bg-black/60 border-b border-white/5 flex items-center justify-between text-xs text-gray-400">
+                  <span className="flex items-center gap-2 font-medium text-white">
+                    <MapPin size={14} className="text-primary-500" />
+                    Abomey, Bénin
+                  </span>
+                  <a
+                    href="https://maps.google.com/maps?q=Abomey,Benin"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-primary-400 hover:text-primary-300 flex items-center gap-1 font-semibold transition-colors"
+                  >
+                    Ouvrir dans Maps <ExternalLink size={12} />
+                  </a>
+                </div>
+                <div className="h-56 sm:h-64 w-full relative">
+                  <iframe
+                    title="Localisation Abomey Bénin"
+                    src="https://maps.google.com/maps?q=Abomey,%20Benin&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0, filter: 'grayscale(0.3) contrast(1.1) invert(0.9) hue-rotate(180deg)' }}
+                    allowFullScreen={false}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full object-cover"
+                  ></iframe>
                 </div>
               </div>
             </div>
 
-            <div className="bg-background border border-white/5 p-8 rounded-2xl shadow-xl h-fit">
-              <h3 className="text-2xl font-bold mb-2">Envoyez-nous votre demande</h3>
-              <p className="text-gray-400 mb-8">Vous préférez nous écrire depuis le site ? Remplissez ce formulaire.</p>
-              
-              <form onSubmit={handleFormSubmit} className="space-y-5">
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Nom complet</label>
-                  <input required type="text" placeholder="Votre nom et prénom" className="w-full bg-background-card border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" value={formData.name} onChange={e => setFormData({...formData, name: e.target.value})} />
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* Right Column: Contact Form (col-span-7) */}
+            <div className="lg:col-span-7 bg-background-card border border-white/10 hover:border-primary-500/20 rounded-2xl p-6 sm:p-8 shadow-2xl transition-all">
+              <form onSubmit={handleFormSubmit} className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Email</label>
-                    <input required type="email" placeholder="votre@email.com" className="w-full bg-background-card border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} />
+                    <label className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                      Nom complet <span className="text-primary-500">*</span>
+                    </label>
+                    <input
+                      required
+                      type="text"
+                      placeholder="Votre nom et prénom"
+                      className="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    />
                   </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Téléphone / WhatsApp</label>
-                    <input required type="tel" placeholder="Votre numéro" className="w-full bg-background-card border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" value={formData.phone} onChange={e => setFormData({...formData, phone: e.target.value})} />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Sujet</label>
-                  <input required type="text" placeholder="Objet de votre demande" className="w-full bg-background-card border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors" value={formData.subject} onChange={e => setFormData({...formData, subject: e.target.value})} />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Votre message</label>
-                  <textarea required rows={4} placeholder="Décrivez brièvement votre demande..." className="w-full bg-background-card border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors resize-none" value={formData.message} onChange={e => setFormData({...formData, message: e.target.value})}></textarea>
-                </div>
-                
-                <p className="text-xs text-gray-500 leading-relaxed">
-                  En envoyant ce formulaire, vous acceptez que les informations transmises soient utilisées uniquement afin de répondre à votre demande.
-                </p>
 
-                <button 
-                  type="submit" 
-                  disabled={formStatus === 'loading'}
-                  className="w-full bg-primary-700 hover:bg-primary-600 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {formStatus === 'loading' ? (
-                    'Envoi de votre demande...'
-                  ) : (
-                    <>
-                      <Send size={18} />
-                      Envoyer ma demande
-                    </>
-                  )}
-                </button>
+                  <div>
+                    <label className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                      Téléphone / WhatsApp <span className="text-primary-500">*</span>
+                    </label>
+                    <input
+                      required
+                      type="tel"
+                      placeholder="Votre numéro de téléphone"
+                      className="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                    Adresse e-mail <span className="text-primary-500">*</span>
+                  </label>
+                  <input
+                    required
+                    type="email"
+                    placeholder="votre.email@exemple.com"
+                    className="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs sm:text-sm font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                    Votre message confidentiel <span className="text-primary-500">*</span>
+                  </label>
+                  <textarea
+                    required
+                    rows={5}
+                    placeholder="Expliquez brièvement votre préoccupation..."
+                    className="w-full bg-[#121212] border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all resize-none leading-relaxed"
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  />
+                </div>
+
+                <div className="pt-2">
+                  <button
+                    type="submit"
+                    disabled={formStatus === 'loading'}
+                    className="w-full bg-primary-500 hover:bg-primary-700 text-white font-bold tracking-wider text-sm sm:text-base uppercase py-4 rounded-xl flex items-center justify-center gap-3 transition-all duration-300 shadow-[0_0_20px_rgba(193,18,31,0.4)] hover:shadow-[0_0_30px_rgba(193,18,31,0.6)] disabled:opacity-70 disabled:cursor-not-allowed hover:scale-[1.005]"
+                  >
+                    {formStatus === 'loading' ? (
+                      'Envoi de votre message...'
+                    ) : (
+                      <>
+                        <Send size={18} />
+                        ENVOYER LE MESSAGE
+                      </>
+                    )}
+                  </button>
+                </div>
 
                 {formStatus === 'error' && (
-                  <div className="bg-red-900/30 border border-red-500/30 text-red-400 p-4 rounded-lg text-sm mt-4">
-                    Nous n'avons pas pu envoyer votre demande. Veuillez réessayer ou nous contacter directement sur WhatsApp.
+                  <div className="bg-red-900/30 border border-red-500/30 text-red-400 p-4 rounded-xl text-sm">
+                    Une erreur est survenue lors de l'envoi. Veuillez réessayer ou contacter directement via WhatsApp.
                   </div>
                 )}
               </form>
@@ -527,7 +710,7 @@ export function Home() {
           <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
             Une question vous préoccupe ? Une situation mérite d'être éclaircie ? Vous souhaitez simplement obtenir davantage d'informations ? Le Grand Maître Visionnaire vous accueille avec écoute, respect et discrétion.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
             <a
               href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`}
