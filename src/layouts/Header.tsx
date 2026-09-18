@@ -44,9 +44,6 @@ export function Header() {
           <span className="text-xl md:text-2xl font-bold tracking-wider text-white group-hover:text-primary-500 transition-colors duration-300">
             GRAND MAÎTRE <span className="text-primary-500">VISIONNAIRE</span>
           </span>
-          <span className="text-xs text-gray-400 tracking-widest mt-1 uppercase">
-            Sagesse • Vision • Transformation
-          </span>
         </Link>
 
         {/* Desktop Nav */}
